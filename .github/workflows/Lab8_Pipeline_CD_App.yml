@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 env: # variables
-  RG_NAME: "RG-AKSCluster"
+  RG_NAME: "RG-AKSClusterhayb"
   CLUSTER_NAME: "AKS-000" 
-  REGISTRY_NAME: "acrpierrc007"
+  REGISTRY_NAME: "acrstan2022ha"
   APP_NAME: "coolapi"
   IMAGE_VERSION: "1.0.0"
 
@@ -27,6 +27,13 @@ jobs:
       - name: Get AKS Credentials
         run: |
           az aks get-credentials --resource-group ${{ env.RG_NAME }} --name ${{ env.CLUSTER_NAME }}
+      - name: Creation du secret
+        run: |
+          kubectl create secret docker-registry "acr-secret"
+          --namespace "coolapi" \
+          --docker-server="acrstan2022ha.azurecr.io" \
+          --docker-username="acrstan2022ha" \ 
+          -docker-password=qjsNFHgQS6xCFZQXN1r0b0sbLoyURkFpDBh1B2uN0L+ACRBvMasV"" \
 
       - name: Deploiement application dans AKS
         run: |      
