@@ -18,3 +18,5 @@ spec:
           image: "acrstan2022ha.azurecr.io/coolapi:1.0.0"
           ports:
           - containerPort: 3000
+      imagePullSecrects:
+      - name: acr-secret
