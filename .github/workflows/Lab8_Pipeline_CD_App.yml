@@ -35,7 +35,7 @@ jobs:
           --namespace "coolapi" \
           --docker-server="acrstan2022ha.azurecr.io" \
           --docker-username="acrstan2022ha" \ 
-          --docker-password=qjsNFHgQS6xCFZQXN1r0b0sbLoyURkFpDBh1B2uN0L+ACRBvMasV"" \
+          --docker-password="qjsNFHgQS6xCFZQXN1r0b0sbLoyURkFpDBh1B2uN0L+ACRBvMasV" \
 
       - name: Deploiement application dans AKS
         run: |                
