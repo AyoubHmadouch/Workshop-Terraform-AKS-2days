@@ -1,4 +1,4 @@
-resource "azurerm_container_registry" "Terra-acr-ha" {
+resource "azurerm_container_registry" "Terra-acr" {
   name                = var.acrName
   resource_group_name = var.resourceGroupName
   location            = var.azureRegion
